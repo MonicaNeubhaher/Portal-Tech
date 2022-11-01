@@ -1,0 +1,82 @@
+# Calculadora While
+# Code Park 31/10/22.py
+# Monica Rodrigues Lopes Neubhaher
+# Turma 03  - Professor Ravi Antunes
+# Exercício - Fazer uma função calculadora que os números e as operações serão
+#             feitas pelo usuário. O código deve ficar rodando infinitamente até
+#             que o usuário escolha a opção de sair. No início, o programa mostrará
+#             a lista de operações:
+#             1. Soma
+#             2. Subtração
+#             3. Multiplicação
+#             4. Divisão
+#             0. Sair
+#             Caso seja inserido um número de operação que não exista,exibir a
+#             a mensagem "Essa opção não existe".
+#             Após a seleção, o sistema deve pedir para o usuário inserir o
+#             primeiro e segundo valor, um de cada. Depois precisa executar a
+#             operação e mostrar o resultado na tela. Quando o usuário escolher
+#             a opção “Sair”, o sistema irá parar.
+#             É necessário que o sistema mostre as opções sempre que finalizar
+#             uma operação e mostrar o resultado. 
+
+num1 = 0
+num2 = 0
+op = 0
+
+def calculadora(num1, num2, op):
+
+    if op != 0:
+
+       n1 = float(input("Informe o primeiro número: "))
+       n2 = float(input("Informe o segundo número: "))
+      
+       if op == 1:      # ADIÇÃO
+          resposta = n1 + n2
+       elif op == 2:    # SUBTRAÇÃO
+          resposta = n1 - n2
+       elif op == 3:    # MULTIPLICAÇÃO
+          resposta = n1 * n2
+       elif op == 4:    # DIVISÃO          
+          resposta = n1 / n2
+       else:
+          resposta = 0         
+    else:
+         resposta = 0
+        
+    return resposta
+
+
+while True:
+    
+    mensagem = "Informe a operação matemática desejada sendo: "
+    mensagem += "\n     1 para adição"
+    mensagem += "\n     2 para subtração"
+    mensagem += "\n     3 para multiplicação"
+    mensagem += "\n     4 para divisão "
+    mensagem += "\n     0 para sair"
+    mensagem += "\n  -> "
+
+    op = int(input(mensagem))
+
+    if op == 0:
+
+        print()
+        print("Execução do programa encerrada pelo usuário!")
+        print()
+        break
+    
+    elif op == 1 or op == 2 or op == 3 or op == 4:    
+
+        resposta = calculadora(num1, num2, op)
+        print()
+        print(f"O resultado é {resposta}")
+        print()
+
+    else:
+        
+        print()
+        print(f"Operação inválida! Tente novamente.")
+        print()
+      
+
